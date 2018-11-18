@@ -1,0 +1,39 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.wtxhub.services.demolocal",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "5.7.0",
+    "applicationType": "microservice",
+    "baseName": "demolocal",
+    "packageName": "com.wtxhub.services.demolocal",
+    "packageFolder": "com/wtxhub/services/demolocal",
+    "serverPort": "30004",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "no",
+    "devDatabaseType": "no",
+    "prodDatabaseType": "no",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": true,
+    "jwtSecretKey": "Zjc2MmZmYjFhNDQ1NDI1NDNlMzVjZmRjM2UzOWY5N2FmZGJmMGVmN2NmMmJmMmE1NjA4MTY3MDk2NWU0YjkzZDVhYjY4NDA2YzgzYTQxYmEwN2E5M2YyNjI4MGY5ODYzMDdmYzA4NTA2MGMzMjU0ODMwYzhjOTkxN2YxYWIxN2M=",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "otherModules": [],
+    "enableTranslation": true,
+    "clientPackageManager": "npm",
+    "nativeLanguage": "en",
+    "languages": [
+      "en",
+      "de"
+    ],
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}
