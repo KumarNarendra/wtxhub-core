@@ -1,0 +1,31 @@
+apiVersion: skaffold/v1alpha2
+kind: Config
+build:
+  tagPolicy:
+    envTemplate:
+      template: "{{.DOCKER_REGISTRY}}/narendra-kumar-becomp-gmail-com/wtxhub-core:{{.VERSION}}"
+  artifacts:
+  - imageName: changeme
+    workspace: .
+    docker: {}
+  local: {}
+deploy:
+  kubectl:
+    manifests:
+profiles:
+- name: dev
+  build:
+    tagPolicy:
+      envTemplate:
+        template: "{{.DOCKER_REGISTRY}}/narendra-kumar-becomp-gmail-com/wtxhub-core:{{.DIGEST_HEX}}"
+    artifacts:
+    - docker: {}
+    local: {}
+  deploy:
+    helm:
+      releases:
+      - name: wtxhub-core
+        chartPath: charts/wtxhub-core
+        setValueTemplates:
+          image.repository: "{{.DOCKER_REGISTRY}}/narendra-kumar-becomp-gmail-com/wtxhub-core"
+          image.tag: "{{.DIGEST_HEX}}"
