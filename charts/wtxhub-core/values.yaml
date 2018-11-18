@@ -3,8 +3,8 @@
 # Declare variables to be passed into your templates.
 replicaCount: 1
 image:
-  repository: draft
-  tag: dev
+  repository: http://localhost:5000//narendra-kumar-becomp-gmail-com/wtxhub-core
+  tag: 0.0.1
   pullPolicy: IfNotPresent
 service:
   name: wtxhub-core
