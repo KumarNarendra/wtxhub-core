@@ -56,6 +56,7 @@ pipeline {
             }
           }
           container('maven') {
+            sh 'export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=128m"'
             sh 'mvn clean deploy'
 
             sh 'export VERSION=`cat VERSION` && skaffold build -f skaffold.yaml'
