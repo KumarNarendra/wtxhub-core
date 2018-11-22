@@ -20,7 +20,8 @@ pipeline {
         steps {
           container('maven') {
             sh "mvn versions:set -DnewVersion=$PREVIEW_VERSION"
-            sh "mvn install"
+            sh 'export MAVEN_OPTS="-Xmx2048m"'
+            sh "mvn install -DskipTests"
             sh 'export VERSION=$PREVIEW_VERSION && skaffold build -f skaffold.yaml'
 
 
@@ -56,8 +57,8 @@ pipeline {
             }
           }
           container('maven') {
-            sh 'export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=128m"'
-            sh 'mvn clean deploy'
+            sh 'export MAVEN_OPTS="-Xmx1024m"'
+            sh 'mvn clean deploy -DskipTests'
 
             sh 'export VERSION=`cat VERSION` && skaffold build -f skaffold.yaml'
 
